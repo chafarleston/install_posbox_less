@@ -5,9 +5,15 @@ PKGS_TO_INSTALL="cups adduser postgresql-client python python-dateutil python-de
 apt-get -y install ${PKGS_TO_INSTALL}
 
 #adduser -m pi -s /sbin/nologin -p 'raspberry'
-useradd -d /home/pi -m -s /bin/bash pedro -p 'raspberry'
+#useradd -d /home/pi -m -s /bin/bash pedro -p 'raspberry'
+#cd /home/pi
 
+adduser pi --disabled-password --quiet --shell /sbin/nologin --gecos "pi"
+echo 'pi:raspberry' | chpasswd
 cd /home/pi
+
+
+
 git clone -b 9.0 --no-checkout --depth 1 https://github.com/odoo/odoo.git 
 cd odoo
 git config core.sparsecheckout true
