@@ -4,7 +4,9 @@
 PKGS_TO_INSTALL="cups adduser postgresql-client python python-dateutil python-decorator python-docutils python-feedparser python-imaging python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-passlib python-psutil python-psycopg2 python-babel python-pychart python-pydot python-pyparsing python-pypdf2 python-reportlab python-requests python-tz python-vatnumber python-vobject python-werkzeug python-xlwt python-yaml postgresql python-gevent python-serial python-pip python-dev localepurge vim mc mg screen iw hostapd isc-dhcp-server git rsync console-data"
 apt-get -y install ${PKGS_TO_INSTALL}
 
-adduser -m pi -s /sbin/nologin -p 'raspberry'
+#adduser -m pi -s /sbin/nologin -p 'raspberry'
+useradd -d /home/pi -m -s /bin/bash pedro -p 'raspberry'
+
 cd /home/pi
 git clone -b 9.0 --no-checkout --depth 1 https://github.com/odoo/odoo.git 
 cd odoo
