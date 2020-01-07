@@ -38,7 +38,8 @@ After=network.target
 Type=simple
 User=pi
 Group=pi
-ExecStart=/home/pi/odoo/odoo.py --load=web,hw_proxy,hw_posbox_homepage,hw_posbox_upgrade,hw_scale,hw_scanner,hw_escpos
+ExecStart=/home/pi/odoo/odoo.py --load=web,hw_proxy,hw_posbox_homepage,hw_posbox_upgrade,hw_scale,hw_scanner,hw_escpos,hw_blackbox_be,hw_screen,hw_printer_network
+#ExecStart=/home/pi/odoo/odoo.py --load=web,hw_proxy,hw_posbox_homepage,hw_posbox_upgrade,hw_scale,hw_scanner,hw_escpos
 KillMode=mixed
 [Install]
 WantedBy=multi-user.target
